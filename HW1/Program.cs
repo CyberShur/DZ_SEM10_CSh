@@ -17,11 +17,11 @@
 Группа 6: 32 48*/
 
  
-Console.Write("Введите N: "); 
-int num = Convert.ToInt32(Console.ReadLine()); 
+Console.Write("Введите число N: "); 
+int number = Convert.ToInt32(Console.ReadLine()); 
 int group = 0; 
 
-for (int i = 1; i <= num; i++) 
+for (int i = 1; i <= number; i++) 
 { 
     if (i == Math.Pow(2, group)) 
     { 
@@ -29,7 +29,10 @@ for (int i = 1; i <= num; i++)
         group++; 
         Console.Write($"Группа {group}: "); 
     } 
-Console.Write($"{i} "); 
+    else
+    {
+    Console.Write($"{i} "); 
+    }
 } 
+
 Console.WriteLine(); 
-Console.WriteLine();
