@@ -29,10 +29,7 @@ for (int i = 1; i <= number; i++)
         group++; 
         Console.Write($"Группа {group}: "); 
     } 
-    else
-    {
     Console.Write($"{i} "); 
-    }
 } 
 
 Console.WriteLine(); 
