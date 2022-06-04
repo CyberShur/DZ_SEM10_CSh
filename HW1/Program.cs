@@ -19,15 +19,23 @@
  
 Console.Write("Введите число N: "); 
 int number = Convert.ToInt32(Console.ReadLine()); 
-int group = 0; 
+int group = 1; 
 
-for (int i = 1; i <= number; i++) 
-{ 
-    if (i == Math.Pow(2, group)) 
+if(number <= Math.Pow(10, 20))
+{
+    for (int i = 1; i <= number; i++) 
     { 
-        Console.WriteLine(); 
-        group++; 
-        Console.Write($"Группа {group}: "); 
-    } 
-    Console.Write($"{i} "); 
-} 
+        if (i == Math.Pow(2, group-1)) // В группу group попадают все числа от 2^(group-1) до (2^group)-1. При таком распределении числа в каждой группе будут взаимно простые. 
+        { 
+            Console.WriteLine(); 
+            Console.Write($"Группа {group}: ");
+            group++; 
+        } 
+        Console.Write($"{i} "); 
+    }
+}
+else
+{
+    Console.WriteLine("Вводное число выходит за пределы условия");
+}
+
